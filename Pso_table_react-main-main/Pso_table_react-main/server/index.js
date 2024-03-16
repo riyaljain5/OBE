@@ -8,7 +8,10 @@ const router = require('./routes/route');
 const route = require("./routes/percentage_route");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow requests from this origin
+  credentials: true // Allow sending cookies
+}));
 app.use(express.json());
 app.use(bodyParser.json());
 
@@ -28,4 +31,3 @@ mongoose
   module.exports = app;
 
   //riyal
-  

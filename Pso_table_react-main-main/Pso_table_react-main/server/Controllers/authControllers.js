@@ -48,7 +48,12 @@ const loginUser = async(req,res)=>{
                 error:"password is required and should be at least 6 characters long"
             })
         };
-        
+        if(user){
+            return res.json({
+                error:" user found"
+            })
+        };
+          
     } catch (error) {
         console.log(error)
     }
